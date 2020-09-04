@@ -19,6 +19,8 @@ int main()
 }
 ```
 
+I haven't shown it here, but you could easily use the allocator together with one or more overloads of `operator new` to give a more idiomatic C++ usage. For embedded code, I tend to allocate a pointer from custom allocators and then call a constructor with placement `new`. Dedicated fixed-size pools seems like better approach for `operator new`. It depends.
+
 ## Description
 
 Buddy allocators are described in detail elsewhere, so I leave that as an exercise for the reader.
